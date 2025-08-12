@@ -1,0 +1,520 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0d0000, #1a0606, #2d0a0a);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        /* Romantic Background Animation */
+        .romantic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(220, 20, 60, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(178, 34, 34, 0.2) 0%, transparent 70%);
+            animation: loveGlow 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes loveGlow {
+            0% { filter: brightness(0.8) saturate(1.2); }
+            100% { filter: brightness(1.2) saturate(1.5); }
+        }
+        
+        /* Floating Hearts */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255, 105, 180, 0.7);
+            animation: heartFloat 12s linear infinite;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+        }
+        
+        @keyframes heartFloat {
+            0% {
+                bottom: -100px;
+                transform: translateX(0) rotate(0deg) scale(0.3);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 110vh;
+                transform: translateX(150px) rotate(180deg) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: 
+                radial-gradient(circle at center, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+            animation: heroFadeIn 2s ease-out;
+        }
+        
+        @keyframes heroFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hashtag {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #dc143c, #ff1493, #ff69b4, #dc143c);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: loveGradient 4s ease infinite;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(220, 20, 60, 0.5);
+            transform: rotate(-2deg);
+        }
+        
+        @keyframes loveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .couple-names {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-shadow: 2px 2px 15px rgba(220, 20, 60, 0.6);
+            animation: nameGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes nameGlow {
+            0% { text-shadow: 2px 2px 15px rgba(220, 20, 60, 0.6); }
+            100% { text-shadow: 2px 2px 25px rgba(255, 20, 147, 0.8); }
+        }
+        
+        .wedding-date {
+            font-size: 1.4rem;
+            color: #ff69b4;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            animation: datePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes datePulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        .love-message {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            animation: messageFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes messageFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .heart-divider {
+            font-size: 3rem;
+            color: #dc143c;
+            animation: heartBeat 1.5s ease-in-out infinite;
+            margin: 30px 0;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .love-container {
+            background: rgba(220, 20, 60, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            box-shadow: 0 30px 60px rgba(220, 20, 60, 0.2);
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: containerFloat 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .love-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 105, 180, 0.1), transparent);
+            animation: shimmer 8s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        @keyframes containerFloat {
+            0%, 100% { transform: translateY(0) rotateX(0deg); }
+            50% { transform: translateY(-10px) rotateX(1deg); }
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #ff1493;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            animation: titleDance 4s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+        }
+        
+        @keyframes titleDance {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+        
+        .section-title::after {
+            content: '♥';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -20px;
+            font-size: 2.5rem;
+            color: #dc143c;
+            animation: heartSpin 3s linear infinite;
+        }
+        
+        @keyframes heartSpin {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+        
+        /* Wedding Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(178, 34, 34, 0.3), rgba(220, 20, 60, 0.2));
+            backdrop-filter: blur(15px);
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: cardPulse 5s ease-in-out infinite;
+        }
+        
+        @keyframes cardPulse {
+            0%, 100% { box-shadow: 0 20px 40px rgba(220, 20, 60, 0.3); }
+            50% { box-shadow: 0 30px 60px rgba(255, 20, 147, 0.4); }
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(255, 20, 147, 0.6);
+            box-shadow: 0 40px 80px rgba(220, 20, 60, 0.4);
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .highlight-card:hover::before {
+            left: 100%;
+        }
+        
+        .highlight-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: iconFloat 4s ease-in-out infinite;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+        }
+        
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        
+        .highlight-title {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+        }
+        
+        .highlight-text {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* Memory Cards */
+        .memories-section {
+            background: radial-gradient(circle at center, rgba(178, 34, 34, 0.2) 0%, transparent 70%);
+            padding: 100px 20px;
+        }
+        
+        .memory-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .memory-card {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.3), rgba(220, 20, 60, 0.2));
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 380px;
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            text-align: left;
+            animation: memoryGlow 4s ease-in-out infinite alternate;
+            position: relative;
+        }
+        
+        @keyframes memoryGlow {
+            0% { 
+                box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3);
+                border-color: rgba(255, 105, 180, 0.4);
+            }
+            100% { 
+                box-shadow: 0 25px 50px rgba(220, 20, 60, 0.4);
+                border-color: rgba(255, 20, 147, 0.6);
+            }
+        }
+        
+        .memory-quote {
+            font-style: italic;
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+            position: relative;
+        }
+        
+        .memory-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: #ff1493;
+            position: absolute;
+            left: -20px;
+            top: -10px;
+            opacity: 0.7;
+        }
+        
+        .memory-detail {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        
+        /* Wishes Section */
+        .wishes-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 105, 180, 0.05));
+        }
+        
+        .wish-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(178, 34, 34, 0.3), rgba(220, 20, 60, 0.2));
+            backdrop-filter: blur(30px);
+            padding: 60px 50px;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 20, 147, 0.4);
+            animation: wishPulse 6s ease-in-out infinite;
+            position: relative;
+            text-align: center;
+        }
+        
+        @keyframes wishPulse {
+            0%, 100% { 
+                box-shadow: 0 0 40px rgba(220, 20, 60, 0.4);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 60px rgba(255, 20, 147, 0.6);
+                transform: scale(1.02);
+            }
+        }
+        
+        .wish-text {
+            font-size: 1.4rem;
+            color: #fff;
+            line-height: 1.8;
+            font-style: italic;
+            font-weight: 400;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(220, 20, 60, 0.1));
+            backdrop-filter: blur(20px);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-top: 2px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .footer-hearts {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: footerHeartBeat 2s ease-in-out infinite;
+            color: #dc143c;
+        }
+        
+        @keyframes footerHeartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
+            75% { transform: scale(1.1); }
+        }
+        
+        .footer-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ff69b4;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        
+        .footer-subtitle {
+            margin-top: 15px;
+            font-size: 1rem;
+            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hashtag {
+                font-size: 3.2rem;
+            }
+            .couple-names {
+                font-size: 2.5rem;
+            }
+            .wedding-date {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2.8rem;
+            }
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .love-container {
+                padding: 40px 25px;
+            }
+            .wish-container {
+                padding: 40px 30px;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #dc143c, #ff1493);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+        }
+    
